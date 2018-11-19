@@ -1,4 +1,17 @@
-## GO REST BASE
+# GO REST BASE
+
+<p align="center">
+    <a href="https://golang.org/doc/install" target="_blank">
+        <img src="https://img.shields.io/badge/Language-Go-green.svg?style=flat" alt="Go">
+    </a>
+    <a href="https://golang.org/doc/install" target="_blank">
+        <img src="https://img.shields.io/badge/Platforms-OS%20X%20%7C%20Linux%20%7C%20Windows-green.svg?style=flat" alt="Platforms OS X | Linux | Windows">
+    </a>
+    <a href="https://github.com/hmkwizu/go-rest-base/blob/master/LICENSE.md" target="_blank">
+        <img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat" alt="License MIT">
+    </a>
+</p>
+
 This is a REST API written in go language. It is meant to be boilerplate code to use when you are starting a new REST API project in go.
 
 ## Overview
@@ -11,7 +24,10 @@ The code includes the following
 * Configuration (using [viper](https://github.com/spf13/viper))
 
 ## How to install
-Go to your $GOPATH/go/src, usually $HOME/go/src,
+Before you continue, please make sure you have installed go on your system. You can install it from [HERE](https://golang.org/doc/install).
+
+
+Then Go to your $GOPATH/go/src, usually $HOME/go/src,
 
 ```
 cd
@@ -32,7 +48,7 @@ go run main.go
 ```
 You are done!
 
-Now go to [localhost:8080/v1/api/test](localhost:8080/v1/api/test)
+Now go to [http://localhost:8080/v1/api/test](http://localhost:8080/v1/api/test)
 
 If you wish to build the executable and run it instead, run
 
@@ -66,6 +82,6 @@ The code is well commented to help you adapt it to your needs. Here is an explan
 
 **global.go** - all the global variables and initializations are in this file. If you want to access the Configuration struct you can use Config variable. 
 
-example. Config.Port, Config.ConnectionString etc
+example, Config.Port, Config.ConnectionString etc
 
 Have fun coding!
