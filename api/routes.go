@@ -20,8 +20,8 @@ func Routes() *chi.Mux {
 	//Public routes - Add unsecured routes here
 	r.Get("/test", controller.Test)
 	r.Get("/users", controller.GetUsers)
-	//r.Post("/getToken", controller.GetToken) //return jwt token on success
-	r.Get("/getToken", controller.GetToken) //return jwt token on success
+	//r.Post("/login", controller.Login) //return jwt token on success
+	r.Get("/login", controller.Login) //return jwt token on success
 
 	// Protected routes - Add routes that you want to secure inside this group
 	r.Group(func(r chi.Router) {

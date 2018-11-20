@@ -41,11 +41,11 @@ func InitDB() {
 	var err error
 	db, err = sql.Open(Config.Driver, Config.ConnectionString)
 	if err != nil {
-		log.Panic(err)
+		log.Println(err)
 	}
 
 	if err = db.Ping(); err != nil {
-		log.Panic(err)
+		log.Println(err)
 	}
 }
 
@@ -54,7 +54,7 @@ func InitConfig() {
 
 	viper.AutomaticEnv()
 	viper.SetDefault("PORT", "8080")
-	viper.SetDefault("CONNECTION_STRING", "root@tcp(127.0.0.1:3306)/niru?charset=utf8")
+	viper.SetDefault("CONNECTION_STRING", "test:test@tcp(127.0.0.1:3306)/test?charset=utf8")
 	viper.SetDefault("DRIVER", "mysql")
 	viper.SetDefault("SIGN_KEY", "123456789")
 

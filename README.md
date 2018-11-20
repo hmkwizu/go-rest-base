@@ -43,6 +43,7 @@ git clone https://github.com/hmkwizu/go-rest-base
 Run this command
 
 ```
+cd go-rest-base
 go get
 go run main.go
 ```
@@ -65,14 +66,16 @@ You will need to export CONNECTION_STRING, before you can connect to your databa
 export CONNECTION_STRING="username:password@tcp(dbhost:dbport)/dbname"
 ```
 
-Other variables you can export
+The default value for CONNECTION_STRING = "test:test@tcp(127.0.0.1:3306)/test?charset=utf8"
+
+**Other variables you can export**
 
 PORT - Port for the REST API to listen (Default: 8080)
 
 SIGN_KEY - Signing Key for JWT Tokens (Default: 123456789)
 
 ## How to use
-The code is well commented to help you adapt it to your needs. Here is an explanation of some files you might need the most. The important files are in the folder api.
+The code is well commented to help you adapt it to your needs. The file main.go is the entry point to the application, you don't need to change it, normally you will work with files in the api folder. Here is an explanation of the files in the api folder.
 
 **repository.go** - this file keeps the code for database interactions. So anything to do with the database eg SELECT, UPDATE, DELETE etc should be in this file.
 
@@ -82,6 +85,10 @@ The code is well commented to help you adapt it to your needs. Here is an explan
 
 **global.go** - all the global variables and initializations are in this file. If you want to access the Configuration struct you can use Config variable. 
 
-example, Config.Port, Config.ConnectionString etc
+*example*, Config.Port, Config.ConnectionString etc
+
+**model.go** - this file keeps all the models that we are going to use in the application. Add your own database models here.
+
+**utils.go** - this file contains some useful functions we might need in the application. Add your own utility functions here.
 
 Have fun coding!

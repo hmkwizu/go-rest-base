@@ -70,16 +70,15 @@ func (c *Controller) GetProducts(w http.ResponseWriter, r *http.Request) {
 
 	//Prepare the response
 	response := make(map[string]interface{})
-	response["message"] = "Received"
 	response["start"] = start
 	response["count"] = count
 
 	render.JSON(w, r, response)
 }
 
-// GetToken returns access_token if correct username and password are given.
+// Login returns access_token if correct username and password are given.
 // this is a mock method, you will need to implement it yourself
-func (c *Controller) GetToken(w http.ResponseWriter, r *http.Request) {
+func (c *Controller) Login(w http.ResponseWriter, r *http.Request) {
 
 	//Normally you will read these values from a post body
 	username := "test"
@@ -106,7 +105,6 @@ func (c *Controller) GetToken(w http.ResponseWriter, r *http.Request) {
 
 	//Prepare the response
 	response := make(map[string]string)
-	response["message"] = "API is running"
 	response["access_token"] = tokenString
 	render.JSON(w, r, response) // Return some demo response
 }
